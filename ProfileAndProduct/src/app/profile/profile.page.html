@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button routerLink="/profile">Profile</ion-button>
+    <div> | </div>
+    <ion-button routerLink="/products" [queryParams]="{ fullName: fullName }">Products</ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-card>
+    <img [src]="imagePath" alt="Profile Photo">
+    <ion-card-content>
+      <ion-buttons>
+        <ion-button (click)="changePhoto()">Change Photo</ion-button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Name: </ion-label>
+          <ion-input [(ngModel)]="fullName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Email: </ion-label>
+          <ion-input [(ngModel)]="email"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button id="present-alert" color="dark" fill="outline" size="small" slot="end">Edit data</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-alert
+  trigger="present-alert"
+  header="Please enter your info"
+  [buttons]="alertButtons"
+  [inputs]="alertInputs"
+></ion-alert>

@@ -1,0 +1,11 @@
+{
+  "name": "ProfileAndProdact",
+  "integrations": {
+    "capacitor": {
+      "config": {
+        "livereload": true
+      }
+    }
+  },
+  "type": "angular"
+}
